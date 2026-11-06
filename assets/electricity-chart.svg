@@ -1,0 +1,49 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 880 400" width="880" height="400" role="img" aria-labelledby="t d">
+  <title id="t">Global data centre electricity use, 2024 and 2030</title>
+  <desc id="d">About 415 terawatt-hours in 2024, projected around 945 terawatt-hours in 2030, slightly more than Japan's total electricity use today. Source: IEA, Energy and AI.</desc>
+  <rect width="880" height="400" fill="#ffffff"/>
+  <g font-family="Segoe UI, Helvetica, Arial, sans-serif" fill="#172033">
+    <text x="40" y="52" font-size="22" font-weight="700">Data centres’ electricity use, worldwide</text>
+    <text x="40" y="78" font-size="15" fill="#4a556b">Terawatt-hours per year, IEA base case</text>
+
+    <!-- scale: 1000 TWh = 640px, bars start at x=150 -->
+    <!-- gridlines -->
+    <g stroke="#e3e8ef" stroke-width="1">
+      <line x1="150" y1="110" x2="150" y2="330"/>
+      <line x1="310" y1="110" x2="310" y2="330"/>
+      <line x1="470" y1="110" x2="470" y2="330"/>
+      <line x1="630" y1="110" x2="630" y2="330"/>
+      <line x1="790" y1="110" x2="790" y2="330"/>
+    </g>
+    <g font-size="13" fill="#4a556b" text-anchor="middle">
+      <text x="150" y="352">0</text>
+      <text x="310" y="352">250</text>
+      <text x="470" y="352">500</text>
+      <text x="630" y="352">750</text>
+      <text x="790" y="352">1,000</text>
+    </g>
+
+    <!-- 2024 bar: 415 → 265.6px -->
+    <text x="134" y="168" font-size="18" font-weight="700" text-anchor="end">2024</text>
+    <rect x="150" y="136" width="266" height="48" rx="4" fill="#8a97ad"/>
+    <text x="428" y="168" font-size="18" font-weight="700">≈ 415</text>
+
+    <!-- 2030 bar: 945 → 604.8px, projection shown hatched -->
+    <defs>
+      <pattern id="hatch" width="10" height="10" patternUnits="userSpaceOnUse" patternTransform="rotate(45)">
+        <rect width="10" height="10" fill="#2b50e8"/>
+        <line x1="0" y1="0" x2="0" y2="10" stroke="#5c78f0" stroke-width="4"/>
+      </pattern>
+    </defs>
+    <text x="134" y="258" font-size="18" font-weight="700" text-anchor="end">2030</text>
+    <text x="134" y="278" font-size="13" fill="#4a556b" text-anchor="end">projected</text>
+    <rect x="150" y="226" width="605" height="48" rx="4" fill="url(#hatch)"/>
+    <text x="732" y="258" font-size="18" font-weight="700" fill="#ffffff" text-anchor="end">≈ 945</text>
+
+    <!-- Japan reference -->
+    <line x1="746" y1="206" x2="746" y2="296" stroke="#172033" stroke-width="2" stroke-dasharray="4 4"/>
+    <text x="746" y="314" font-size="13" text-anchor="middle" fill="#172033">≈ all of Japan today</text>
+
+    <text x="40" y="384" font-size="13" fill="#4a556b">Source: International Energy Agency, Energy and AI (2025).</text>
+  </g>
+</svg>
