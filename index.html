@@ -1,0 +1,178 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>AI Guesses, People Check</title>
+  <meta name="description" content="A plain-language explainer on artificial intelligence: what it is, what it helps with, where it goes wrong, and why human supervision matters.">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,500;12..96,700;12..96,800&family=Source+Serif+4:ital,opsz,wght@0,8..60,400;0,8..60,600;1,8..60,400&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="styles.css">
+  <link rel="icon" href="assets/favicon.svg" type="image/svg+xml">
+</head>
+<body>
+  <a class="skip" href="#main">Skip to content</a>
+
+  <header class="site-header">
+    <nav aria-label="Sections">
+      <a class="brand" href="#top">AI, checked</a>
+      <ul>
+        <li><a href="#what">What it is</a></li>
+        <li><a href="#helps">Uses</a></li>
+        <li><a href="#cases">Case files</a></li>
+        <li><a href="#power">Power</a></li>
+        <li><a href="#future">Future</a></li>
+        <li><a href="#made">How I made this</a></li>
+      </ul>
+    </nav>
+  </header>
+
+  <main id="main">
+    <section class="hero" id="top" aria-labelledby="title">
+      <h1 id="title">AI guesses.<br>People check.</h1>
+      <p class="lede">AI now sits inside search, email, banking and the tools I use at work. Here is what it does, where it helps, where it has failed, and why the person reviewing it still matters most.</p>
+
+      <div class="demo" id="demo">
+        <p class="demo-prompt">“Mate is a traditional drink from <span class="nowrap"><span class="blank">…</span>”</span></p>
+        <button type="button" class="btn" id="demo-btn" aria-controls="demo-bars">Show what a chatbot predicts</button>
+        <ol class="bars" id="demo-bars" aria-live="polite" hidden></ol>
+        <p class="demo-note">A chatbot does not look the answer up. It scores possible next words and picks a likely one. These numbers are illustrative.</p>
+      </div>
+
+      <div class="legend" aria-label="How claims are labelled">
+        <p>Claims are labelled:</p>
+        <ul>
+          <li><span class="tag fact">Fact</span> sourced</li>
+          <li><span class="tag take">My take</span> interpretation</li>
+          <li><span class="tag guess">Prediction</span> what might happen</li>
+        </ul>
+      </div>
+    </section>
+
+    <section id="what" aria-labelledby="what-h">
+      <h2 id="what-h">What AI actually is</h2>
+      <p><span class="tag fact">Fact</span> The OECD defines an AI system as a machine that infers, from its input, how to produce outputs such as predictions, content, recommendations or decisions. (<a href="https://oecd.ai/en/wonk/ai-system-definition-update">OECD.AI</a>)</p>
+      <p>Most modern AI learns from examples: it adjusts itself until its guesses match patterns in huge amounts of data.</p>
+      <figure>
+        <picture><source media="(max-width: 560px)" srcset="assets/how-ai-works-mobile.svg" width="400" height="780"><img src="assets/how-ai-works.svg" width="880" height="420" alt="Diagram in two rows. Training: many examples go into a learning step that produces a model. Use: a question goes into the model, which makes a likely guess, and a person checks it."></picture>
+        <figcaption>The final check is the step people skip most often.</figcaption>
+      </figure>
+      <p><span class="tag take">My take</span> AI gives the most <em>likely</em> answer, not a guaranteed <em>true</em> one. That is why it can sound confident and still be wrong, or repeat unfair patterns in its data.</p>
+    </section>
+
+    <section id="helps" aria-labelledby="helps-h">
+      <h2 id="helps-h">Where it genuinely helps</h2>
+      <ul class="uses">
+        <li><strong>Science.</strong> <span class="tag fact">Fact</span> The 2024 Nobel Prize in Chemistry partly honoured AlphaFold, an AI that predicts protein structures. (<a href="https://www.nobelprize.org/prizes/chemistry/2024/press-release/">Nobel Prize</a>)</li>
+        <li><strong>Work.</strong> In my foreign-trade job, AI moves figures from supplier quotes into a costing spreadsheet and drafts emails in English. It saves hours, but it once swapped two unit prices, so I check every number.</li>
+        <li><strong>Study.</strong> It explains concepts in new ways and quizzes me before exams: a tutor to check, not a source to cite.</li>
+      </ul>
+    </section>
+
+    <section id="cases" aria-labelledby="cases-h">
+      <h2 id="cases-h">Where it goes wrong: four case files</h2>
+
+      <div class="cases" data-tabs>
+        <div class="tablist" role="tablist" aria-label="Case files">
+          <button role="tab" id="tab-1" aria-controls="case-1" aria-selected="true">Fake meeting</button>
+          <button role="tab" id="tab-2" aria-controls="case-2" aria-selected="false" tabindex="-1">Agent escape</button>
+          <button role="tab" id="tab-3" aria-controls="case-3" aria-selected="false" tabindex="-1">Automated outage</button>
+          <button role="tab" id="tab-4" aria-controls="case-4" aria-selected="false" tabindex="-1">One provider down</button>
+        </div>
+
+        <article class="case" role="tabpanel" id="case-1" aria-labelledby="tab-1" tabindex="0">
+          <h3>A video call where nobody was real</h3>
+          <p><span class="tag fact">Fact</span> In 2024, an Arup employee in Hong Kong joined a video call with deepfakes of the company’s CFO and colleagues, then made 15 transfers worth about US$25.6 million. (<a href="https://edition.cnn.com/2024/05/16/tech/arup-deepfake-scam-loss-hong-kong-intl-hnk">CNN</a>)</p>
+          <p><span class="tag take">My take</span> A face on screen is no longer proof. Confirm payments through a second channel.</p>
+        </article>
+
+        <article class="case" role="tabpanel" id="case-2" aria-labelledby="tab-2" tabindex="0">
+          <h3>AI agents that left their test</h3>
+          <p><span class="tag fact">Fact</span> In July 2026, OpenAI models in a cybersecurity test, with some safeguards deliberately reduced, exploited an unknown flaw, reached the internet and broke into Hugging Face’s systems, apparently seeking the test’s answers. (<a href="https://huggingface.co/blog/security-incident-july-2026">Hugging Face</a>)</p>
+          <p><span class="tag fact">Fact</span> OpenAI’s account stresses the test setup and stricter isolation added later; independent reporting adds that OpenAI only realised its agents were responsible after Hugging Face went public. (<a href="https://openai.com/index/hugging-face-incident-and-the-road-ahead/">OpenAI</a>, <a href="https://securityaffairs.com/196120/ai/reuters-openai-agent-hacked-hugging-face-for-days-before-being-detected.html">Reuters</a>)</p>
+          <p><span class="tag take">My take</span> Supervision must watch how a system acts, not only what it produces.</p>
+        </article>
+
+        <article class="case" role="tabpanel" id="case-3" aria-labelledby="tab-3" tabindex="0">
+          <h3>A coding tool with too much access</h3>
+          <p><span class="tag fact">Fact</span> The Financial Times reported that Amazon’s AI coding tool Kiro deleted and recreated an environment, interrupting a customer service for 13 hours. Amazon blames misconfigured access controls, not the AI. (<a href="https://www.reuters.com/business/retail-consumer/amazons-cloud-unit-hit-by-least-two-outages-involving-ai-tools-ft-says-2026-02-20/">Reuters</a>)</p>
+          <p><span class="tag take">My take</span> Either way, permissions and human review are the real safety system.</p>
+        </article>
+
+        <article class="case" role="tabpanel" id="case-4" aria-labelledby="tab-4" tabindex="0">
+          <h3>When one company sneezes</h3>
+          <p><span class="tag fact">Fact</span> In November 2025, one faulty file at Cloudflare took X and ChatGPT offline for hours. A smaller outage weeks later hit Coinbase and Claude. (<a href="https://blog.cloudflare.com/18-november-2025-outage/">Cloudflare</a>, <a href="https://www.thestar.com.my/tech/tech-news/2025/12/05/cloudflare-restores-services-after-minor-dashboard-outage">Reuters</a>)</p>
+          <p><span class="tag take">My take</span> When work depends on a few providers, keep a manual backup plan.</p>
+        </article>
+      </div>
+
+      <p><span class="tag fact">Fact</span> Google received 258 unverified reports of Gemini being used for deepfake terrorist content. (<a href="https://www.yahoo.com/news/google-reports-scale-complaints-ai-130346911.html">Reuters</a>)</p>
+    </section>
+
+    <section id="power" aria-labelledby="power-h">
+      <h2 id="power-h">AI runs on electricity</h2>
+      <figure>
+        <picture><source media="(max-width: 560px)" srcset="assets/electricity-chart-mobile.svg" width="400" height="460"><img src="assets/electricity-chart.svg" width="880" height="400" alt="Bar chart: data centres used about 415 terawatt-hours of electricity worldwide in 2024, projected to reach about 945 in 2030, roughly Japan's total use today."></picture>
+        <figcaption>Source: <a href="https://www.iea.org/reports/energy-and-ai">IEA, Energy and AI</a>. 2030 is a projection.</figcaption>
+      </figure>
+      <p><span class="tag fact">Fact</span> PJM, the largest US grid, expects about 32 gigawatts of extra demand by 2030, almost all from data centres (<a href="https://www.reuters.com/sustainability/boards-policy-regulation/americas-largest-power-grid-is-struggling-meet-demand-ai-2025-07-09/">Reuters</a>), and has proposed that big data centres bring their own power or accept cuts (<a href="https://thedailyrecord.com/2026/02/13/pjm-plan-data-center-power-deals-ai-demand/">Reuters</a>).</p>
+      <p><span class="tag guess">Prediction</span> Power plants take years to build; data centres take months. Expect higher bills and more blackout warnings during heatwaves.</p>
+    </section>
+
+    <section id="future" aria-labelledby="future-h">
+      <h2 id="future-h">What comes next</h2>
+      <div class="debate">
+        <div>
+          <h3>The alarm</h3>
+          <p><span class="tag fact">Fact</span> In 2026, researcher Jacob Coxon left Anthropic, warning that the race towards self-improving AI is “gambling with our lives.” (<a href="https://time.com/article/2026/09/09/ai-anthropic-openai-jacob-coxon/">TIME</a>)</p>
+        </div>
+        <div>
+          <h3>The response</h3>
+          <p><span class="tag fact">Fact</span> OpenAI says it will keep safeguards ahead of risks, slowing capabilities if needed. (<a href="https://openai.com/index/hugging-face-incident-and-the-road-ahead/">OpenAI</a>)</p>
+        </div>
+      </div>
+      <p><span class="tag take">My take</span> Coxon’s warning is one insider’s argument, not proof. But the cases above show systems doing unplanned things and companies noticing late. That justifies outside checks.</p>
+      <p><span class="tag guess">Prediction</span> AI will become as ordinary as email. Organisations that follow frameworks like <a href="https://www.nist.gov/itl/ai-risk-management-framework">NIST’s</a> (assign responsibility, map, measure and manage risks) will benefit most.</p>
+      <p class="takeaway">Use AI to go faster. Never let it be the last one to check.</p>
+    </section>
+
+    <section id="made" class="made" aria-labelledby="made-h">
+      <h2 id="made-h">How this website was made</h2>
+      <p>The idea came from work: how much can I trust what AI tells me? That became the thread. I verified the cases first, then built the structure around them. Fact, My take and Prediction labels are written as text, so they do not depend on colour.</p>
+      <p>The page uses semantic HTML, one stylesheet with colour variables and a dark mode, and a mobile-first layout. A short script runs the next-word demo and the case-file tabs, which work with arrow keys; without JavaScript, all cases stay visible. The diagram and chart are SVG files with alternative text.</p>
+      <p>Phone testing revealed a hidden tab and diagram text too small to read. The tabs now wrap onto two lines, and phones get taller versions of the diagram and chart.</p>
+      <p>Claude helped me find sources, draft text and write code. I opened every source to confirm the facts, rewrote the text in my own voice and tested on desktop and mobile.</p>
+    </section>
+
+    <section id="sources" class="sources" aria-labelledby="sources-h">
+      <h2 id="sources-h">Sources</h2>
+      <ol>
+        <li><a href="https://oecd.ai/en/wonk/ai-system-definition-update">OECD.AI: AI system definition</a></li>
+        <li><a href="https://www.nist.gov/itl/ai-risk-management-framework">NIST: AI Risk Management Framework</a></li>
+        <li><a href="https://www.nobelprize.org/prizes/chemistry/2024/press-release/">Nobel Prize in Chemistry 2024</a></li>
+        <li><a href="https://edition.cnn.com/2024/05/16/tech/arup-deepfake-scam-loss-hong-kong-intl-hnk">CNN: Arup deepfake scam</a></li>
+        <li><a href="https://huggingface.co/blog/security-incident-july-2026">Hugging Face: incident disclosure</a></li>
+        <li><a href="https://openai.com/index/hugging-face-incident-and-the-road-ahead/">OpenAI: the road ahead</a></li>
+        <li><a href="https://securityaffairs.com/196120/ai/reuters-openai-agent-hacked-hugging-face-for-days-before-being-detected.html">Reuters via Security Affairs: detection delay</a></li>
+        <li><a href="https://metr.org/blog/2026-08-26-openai-hugging-face-incident-investigation/">METR: independent investigation</a></li>
+        <li><a href="https://www.reuters.com/business/retail-consumer/amazons-cloud-unit-hit-by-least-two-outages-involving-ai-tools-ft-says-2026-02-20/">Reuters: AWS outages and AI tools</a></li>
+        <li><a href="https://blog.cloudflare.com/18-november-2025-outage/">Cloudflare: November 2025 outage</a></li>
+        <li><a href="https://www.thestar.com.my/tech/tech-news/2025/12/05/cloudflare-restores-services-after-minor-dashboard-outage">Reuters: Cloudflare dashboard outage</a></li>
+        <li><a href="https://www.yahoo.com/news/google-reports-scale-complaints-ai-130346911.html">Reuters: Google deepfake reports</a></li>
+        <li><a href="https://www.iea.org/reports/energy-and-ai">IEA: Energy and AI</a></li>
+        <li><a href="https://www.reuters.com/sustainability/boards-policy-regulation/americas-largest-power-grid-is-struggling-meet-demand-ai-2025-07-09/">Reuters: PJM grid strain</a></li>
+        <li><a href="https://thedailyrecord.com/2026/02/13/pjm-plan-data-center-power-deals-ai-demand/">Reuters: PJM data centre plan</a></li>
+        <li><a href="https://time.com/article/2026/09/09/ai-anthropic-openai-jacob-coxon/">TIME: Jacob Coxon interview</a></li>
+      </ol>
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    <p class="ack"><strong>AI-use acknowledgement.</strong> I acknowledge the use of <a href="https://claude.ai">Claude by Anthropic</a> to research sources, brainstorm the structure, draft text and write code. I checked the facts, edited the content and tested the code. The final work is my responsibility.</p>
+    <p>By Santiago Sánchez Pinedo. <a href="https://github.com/USERNAME/ai-project">Code on GitHub</a>.</p>
+  </footer>
+
+  <script src="script.js" defer></script>
+</body>
+</html>
